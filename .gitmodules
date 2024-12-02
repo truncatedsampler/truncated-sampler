@@ -1,0 +1,9 @@
+[submodule "scripts/lattice_estimator"]
+	path = scripts/lattice_estimator
+	url = https://github.com/malb/lattice-estimator
+[submodule "code/signature_full/libs/flint"]
+	path = code/signature_full/libs/flint
+	url = https://github.com/flintlib/flint
+[submodule "code/signature_truncated/libs/flint"]
+	path = code/signature_truncated/libs/flint
+	url = https://github.com/flintlib/flint
