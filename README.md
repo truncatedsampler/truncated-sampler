@@ -5,7 +5,7 @@ This repository contains the code for the paper **Worst-Case Lattice Sampler wit
 
 The repository contains
 - the parameter selection and security estimation scripts in python, and
-- the implementation in C
+- the implementation in C  
 
 ## Parameter Scripts
 
@@ -21,6 +21,14 @@ You can then run the python scripts:
 - `parameters_anonymous_credentials_AGJLRS24_bimodal.py`: Parameter selection script for the anonymous credentials from [AGJLRS24] (with or without the zero-knowledge optimizations of [LNP22,LN22]).  
 - `parameters_anonymous_credentials.py`: Parameter selection script for the anonymous credentials with our truncated sampler (with or without the zero-knowledge optimizations of [LNP22,LN22]).  
 - `parameters_blind_signature.py`: Parameter selection script for the blind signature from [JS24] and the one from Section 5.2.3 using our truncated sampler.  
+
+**References**
+
+[AGJLRS24] Argo, Güneysu, Jeudy, Land, Roux-Langlois, Sanders. _Practical Post-Quantum Signatures for Privacy_. CCS 2024  
+[JS24] Jeudy, Sanders. _Improved Lattice Blind Signatures from Recycled Entropy_. IACR ePrint 2024/1289  
+[LN22] Lyubashevsky, Nguyen. _BLOOM: Bimodal Lattice One-Out-of-Many Proofs and Applications_. ASIACRYPT 2022  
+[LNP22] Lyubashevsky, Nguyen, Plançon. _Lattice-Based Zero-Knowledge Proofs and Applications: Shorter, Simpler, and More General_. CRYPTO 2022  
+[LNPS21] Lyubashevsky, Nguyen, Plançon, Seiler. _Shorter Lattice-Based Group Signatures via ``Almost Free'' Encryption and Other Optimizations_. ASIACRYPT 2021
 
 ## C Implementations
 
