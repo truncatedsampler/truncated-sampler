@@ -14,8 +14,7 @@ COST_MODEL      = 'realistic_sieving'
 ROUGH           = False
 QUANTUM         = False
 LOG2_EPS        = -40
-SPECTRAL_SLACK  = 6
-Q_m             = 2**100    
+SPECTRAL_SLACK  = 6 
 #-- End Global Parameters --#
 
 def c_star(dim:int, sec:float):
@@ -1136,9 +1135,9 @@ def estimate_blind_signature(sig_pms, pke_pms, issue_zkp_pms, show_zkp_pms):
         tmp1 = h(tmp1)
         tmp2 = h(tmp2)
     tmp1 = tmp1
-    tmp2 = e_LWE_1 + (1+eps)/(1-eps) * (e_sound_1 + C*8*sig_pms.M_11*sig_pms.M_12*sig_pms.M_2*tmp2)
+    tmp2 = C**2*e_LWE_1 + (1+eps)/(1-eps) * (e_sound_1 + 8*sig_pms.M_11*sig_pms.M_12*sig_pms.M_2*tmp2)
 
-    security_om_uf = log2(e_LWE_e + exp(Q_m*(Q_m-1)*2**(-sig_pms.n-1)) * (e_sound_2 + 2*max(tmp1,tmp2)))
+    security_om_uf = log2(e_LWE_e + e_sound_2 + 2*max(tmp1,tmp2))
 
     tmp = '\n[ISSUANCE TRANSCRIPT SIZE]\n'
     tmp += '\n'

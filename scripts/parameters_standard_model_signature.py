@@ -219,11 +219,11 @@ class Full_Gadget_Parameters:
 
         # Computing loss through hybrid argument
         self.eps_I = C * msis_I_hardness_bound * (1 if no_guessing else (self.tag_space_size - self.Q))
-        self.eps_II = C * msis_II_hardness_bound * (1 if no_guessing else self.Q)
+        self.eps_II = C/(1-tail_cut_prob)**3 * msis_II_hardness_bound * (1 if no_guessing else self.Q)
         for _ in range(self.d):
             self.eps_I = h(self.eps_I)
             self.eps_II = h(self.eps_II)
-        self.eps_II = mlwe_hardness_bound + 2*self.M*C/(1-tail_cut_prob)**3*(1+eps)/(1-eps)*self.eps_II
+        self.eps_II = C*mlwe_hardness_bound + 2*self.M*(1+eps)/(1-eps)*self.eps_II
 
         self.security = -log2(2*max(self.eps_I, self.eps_II))
         
@@ -509,11 +509,11 @@ class Truncated_Gadget_Parameters:
 
         # Computing loss through hybrid argument
         self.eps_I = C * msis_I_hardness_bound * (1 if no_guessing else (self.tag_space_size - self.Q))
-        self.eps_II = C * msis_II_hardness_bound * (1 if no_guessing else self.Q)
+        self.eps_II = C/ (1-tail_cut_prob)**4 * msis_II_hardness_bound * (1 if no_guessing else self.Q)
         for _ in range(self.d):
             self.eps_I = h(self.eps_I)
             self.eps_II = h(self.eps_II)
-        self.eps_II = mlwe_hardness_bound + 4*self.M_11*self.M_12*C**2 / (1-tail_cut_prob)**4 *(1+eps)/(1-eps)*self.eps_II
+        self.eps_II = C**2 * mlwe_hardness_bound + 4*self.M_11*self.M_12 *(1+eps)/(1-eps)*self.eps_II
 
         self.security = -log2(2*max(self.eps_I, self.eps_II))
 
