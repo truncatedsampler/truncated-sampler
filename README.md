@@ -1,7 +1,7 @@
 # Worst-Case Lattice Sampler with Truncated Gadgets and Applications
 ---
 
-This repository contains the code for the paper **Worst-Case Lattice Sampler with Truncated Gadgets and Applications**. Part of the code was taken from the implementation of [lattice anonymous credentials](https://github.com/Chair-for-Security-Engineering/lattice-anonymous-credentials) and [lattice blind signature](https://github.com/latticeblindsignature/lattice-blind-signature).  
+This repository contains the code by Corentin Jeudy for the paper **Worst-Case Lattice Sampler with Truncated Gadgets and Applications** by Corentin Jeudy and Olivier Sanders. The paper was published at Asiacrypt 2025 and is also available on the IACR ePrint Archive [here](https://eprint.iacr.org/2024/1952). Part of the code was taken from the implementation of [lattice anonymous credentials](https://github.com/Chair-for-Security-Engineering/lattice-anonymous-credentials) (by Sven Argo, Corentin Jeudy and Olivier Sanders) and [lattice blind signature](https://github.com/latticeblindsignature/lattice-blind-signature) (by Corentin Jeudy).  
 
 The repository contains
 - the parameter selection and security estimation scripts in python, and
