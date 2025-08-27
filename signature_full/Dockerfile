@@ -32,7 +32,7 @@ RUN make check
 RUN make install
 
 # Setup FLINT library
-WORKDIR /home/full/libs/flint-3.2.0-dev
+WORKDIR /home/full/libs/flint
 RUN ./bootstrap.sh
 RUN ./configure --enable-avx2 --disable-pthread CFLAGS="-O3 -Wall -march=native" CC="gcc-11"
 RUN make -j
