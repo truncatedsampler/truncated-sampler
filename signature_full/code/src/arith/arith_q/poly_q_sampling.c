@@ -44,7 +44,7 @@ static void poly_q_uniform(poly_q pout, const uint8_t seed[SEED_BYTES], uint32_t
       off = 0;
       bytecnt += SHAKE128_RATE;
     }
-    uint64_t tmp5byte = output[off] | ((uint64_t)output[off+1] << 8) | ((uint64_t)output[off+2] << 16);
+    uint64_t tmp5byte = output[off] | ((uint64_t)output[off+1] << 8) | ((uint64_t)output[off+2] << 16) | ((uint64_t)output[off+3] << 24) | ((uint64_t)output[off+4] << 32);
     uint64_t tmp = tmp5byte & ((1<<PARAM_Q_BITLEN)-1);
     if (tmp < (coeff_q)PARAM_Q) {
       poly_q_set_coeff(pout, cnt++, tmp);
